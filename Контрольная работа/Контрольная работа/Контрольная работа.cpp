@@ -57,6 +57,19 @@ public:
     }
 };
 
+void sortFurniture(Furniture* objects[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (objects[j]->getPrice > objects[j + 1]->getPrice) {
+                // Меняем местами указатели
+                Furniture* temp = objects[j];
+                objects[j] = objects[j + 1];
+                objects[j + 1] = temp;
+            }
+        }
+    }
+}
+
 void MenuUser() {
     const int arraySize = 5; // Максимальное количество объектов
     Furniture* objects_Fool[arraySize]; // Массив указателей на объекты
@@ -155,7 +168,7 @@ void MenuUser() {
 
         case 5:
             // Сортировка массива объектов по цене
-            
+            sortFurniture(objects_Fool, index);
             cout << "Массив отсортирован по цене." << endl;
             break;
 
