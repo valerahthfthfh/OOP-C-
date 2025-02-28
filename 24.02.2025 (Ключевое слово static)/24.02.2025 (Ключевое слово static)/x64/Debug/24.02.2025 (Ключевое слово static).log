@@ -1,0 +1,8 @@
+﻿  Source.cpp
+C:\Users\user\Desktop\OOP-C-\24.02.2025 (Ключевое слово static)\24.02.2025 (Ключевое слово static)\Source.cpp(61,40): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\user\Desktop\OOP-C-\24.02.2025 (Ключевое слово static)\24.02.2025 (Ключевое слово static)\Source.cpp(66,40): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Users\user\Desktop\OOP-C-\24.02.2025 (Ключевое слово static)\24.02.2025 (Ключевое слово static)\Source.cpp(77,19): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\user\Desktop\OOP-C-\24.02.2025 (Ключевое слово static)\24.02.2025 (Ключевое слово static)\Source.cpp(81,18): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\user\Desktop\OOP-C-\24.02.2025 (Ключевое слово static)\24.02.2025 (Ключевое слово static)\Source.cpp(87,27): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Users\user\Desktop\OOP-C-\24.02.2025 (Ключевое слово static)\24.02.2025 (Ключевое слово static)\Source.cpp(93,26): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+  24.02.2025 (Ключевое слово static).vcxproj -> C:\Users\user\Desktop\OOP-C-\24.02.2025 (Ключевое слово static)\x64\Debug\24.02.2025 (Ключевое слово static).exe
