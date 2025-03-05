@@ -6,8 +6,8 @@ using namespace std;
 
 /*
 *  autor: Leontev Valera Romanovith
-* 
-* brief: The code is fully functional and works according 
+*
+* brief: The code is fully functional and works according
 *		to the task conditions, it has all the requirements listed
 *		in the task such as (Constructors, checks, operations,
 *		Menu - with functionality for Adding engines, displaying all engines,
@@ -89,6 +89,12 @@ public:
 		this->SerialNumber++;
 		return *this;
 	}
+
+	virtual void PrintInfo() {
+		cout << "Engine #" << SerialNumber << endl;
+		cout << "Type: " << CombinedPistonEngine << endl;
+
+	}
 };
 
 // Internal combustion engine class
@@ -163,6 +169,14 @@ public:
 		this->Volume++;
 		return *this;
 	}
+
+	virtual void PrintInfo() override {
+		cout << "Engine #" << GetSerialNumber() << endl;
+		cout << "Type: " << GetCombinedPistonEngine() << endl;
+		cout << "Volume: " << Volume << endl;
+		cout << "Carrier: " << Carrier << endl;
+
+	}
 };
 
 // Diesel engine class
@@ -202,7 +216,7 @@ public:
 	}
 
 	// Getters
-	int GetFuelConsumption() { return FuelConsumption; }
+	float GetFuelConsumption() { return FuelConsumption; }
 	string GetServiceLife() { return ServiceLife; }
 
 	// Setters
@@ -238,6 +252,16 @@ public:
 		DieselEngine temp(*this);
 		this->FuelConsumption++;
 		return *this;
+	}
+
+	virtual void PrintInfo() override {
+		cout << "Engine #" << GetSerialNumber() << endl;
+		cout << "Type: " << GetCombinedPistonEngine() << endl;
+		cout << "Volume: " << GetVolume() << endl;
+		cout << "Carrier: " << GetCarrier() << endl;
+		cout << "Fuel Consumption: " << FuelConsumption << endl;
+		cout << "ServiceLife: " << ServiceLife << endl;
+
 	}
 };
 
@@ -277,7 +301,7 @@ public:
 	}
 
 	// Getters
-	int GetFuelConsumption() { return FuelConsumption; }
+	float GetFuelConsumption() { return FuelConsumption; }
 	string GetServiceLife() { return ServiceLife; }
 
 	// Setters
@@ -314,6 +338,16 @@ public:
 		this->FuelConsumption++;
 		return *this;
 	}
+
+	virtual void PrintInfo() override {
+		cout << "Engine #" << GetSerialNumber() << endl;
+		cout << "Type: " << GetCombinedPistonEngine() << endl;
+		cout << "Volume: " << GetVolume() << endl;
+		cout << "Carrier: " << GetCarrier() << endl;
+		cout << "Fuel Consumption: " << FuelConsumption << endl;
+		cout << "ServiceLife: " << ServiceLife << endl;
+
+	}
 };
 
 // User menu!
@@ -339,17 +373,17 @@ void Menu() {
 			string combinedEngineType, carrier, serviceLife;
 			float fuelConsumption;
 
-			cout << "Enter serial number: "; // <-
+			cout << "Enter serial number (0 - 20000): "; // <-
 			cin >> serialNumber;
 			cout << "Enter engine type: "; // <-
 			cin >> combinedEngineType;
-			cout << "Enter engine volume: "; // <-
+			cout << "Enter engine volume (999 - 25480): "; // <-
 			cin >> volume;
 			cout << "Enter carrier: "; // <-
 			cin >> carrier;
-			cout << "Enter fuel consumption: "; // <-
+			cout << "Enter fuel consumption (5 - 6.4): "; // <-
 			cin >> fuelConsumption;
-			cout << "Enter service life: "; // <-
+			cout << "Enter service life : "; // <-
 			cin >> serviceLife;
 
 			/* make_shared<DieselEngine>(...) —
@@ -367,17 +401,17 @@ void Menu() {
 			string combinedEngineType, carrier, serviceLife;
 			float fuelConsumption;
 
-			cout << "Enter serial number: ";
+			cout << "Enter serial number (0 - 20000): "; // <-
 			cin >> serialNumber;
-			cout << "Enter engine type: ";
+			cout << "Enter engine type: "; // <-
 			cin >> combinedEngineType;
-			cout << "Enter engine volume: ";
+			cout << "Enter engine volume (999 - 25480): "; // <-
 			cin >> volume;
-			cout << "Enter carrier: ";
+			cout << "Enter carrier: "; // <-
 			cin >> carrier;
-			cout << "Enter fuel consumption: ";
+			cout << "Enter fuel consumption (6.6 - 11.7): "; // <-
 			cin >> fuelConsumption;
-			cout << "Enter service life: ";
+			cout << "Enter service life : "; // <-
 			cin >> serviceLife;
 
 			engines.push_back(make_shared<JetEngine>(serialNumber, combinedEngineType, volume, carrier, fuelConsumption, serviceLife));
@@ -412,9 +446,7 @@ void Menu() {
 			else {
 				cout << "Total engines: " << engines.size() << endl;
 				for (size_t i = 0; i < engines.size(); ++i) {
-					cout << "-----------------------------" << endl;
-					cout << "Engine #" << engines[i]->GetSerialNumber() << endl;
-					cout << "Type: " << engines[i]->GetCombinedPistonEngine() << endl;
+					engines[i]->PrintInfo();
 				}
 				cout << "-----------------------------" << endl;
 			}
@@ -457,6 +489,15 @@ int main() {
 
 	Menu();
 
+	InternalCombustionEngine* Output_one = new InternalCombustionEngine;
+
+	Output_one->SetSerialNumber(15);
+	cout << "Serial Number -> " << Output_one->GetSerialNumber() << endl;
+
+	Engine* OutputTwoo = dynamic_cast<Engine*>(Output_one);
+
+	cout << "Serial Number -> " << OutputTwoo->GetSerialNumber() << endl;
+
+
 }
 
-			
