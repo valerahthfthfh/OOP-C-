@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\user\Desktop\OOP-C-\Повторение материала\Повторение материала\Source.cpp(9,21): warning C4305: инициализация: усечение из "double" в "const float"
+C:\Users\user\Desktop\OOP-C-\Повторение материала\Повторение материала\Source.cpp(30,22): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\user\Desktop\OOP-C-\Повторение материала\Повторение материала\Source.cpp(73,22): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  Повторение материала.vcxproj -> C:\Users\user\Desktop\OOP-C-\Повторение материала\x64\Debug\Повторение материала.exe
